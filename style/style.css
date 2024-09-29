@@ -9,6 +9,7 @@
 
 :root {
   --dark-cyan: hsl(158, 36%, 37%);
+  --dark-cyan-activated: hsl(156, 42%, 18%);
   --cream: hsl(30, 38%, 92%);
   --dark-blue-1: hsl(212, 21%, 14%);
   --dark-blue-2: hsl(228, 12%, 48%);
@@ -27,7 +28,7 @@ body {
   font-weight: 500;
 
   background-color: var(--cream);
-  padding: 170px 16px;
+  padding: 45px 16px;
 }
 
 .card {
@@ -117,16 +118,25 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
+
+  &:hover {
+    background-color: var(--dark-cyan-activated);
+  }
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: -10;
 }
 
 @media screen and (min-width: 1280px) {
+  body {
+    padding: 170px 16px;
+  }
+
   .card {
     max-width: 600px;
     display: flex;
@@ -147,5 +157,9 @@ footer {
 
   .price {
     margin-bottom: 20px;
+  }
+
+  .card button {
+    cursor: pointer;
   }
 }
